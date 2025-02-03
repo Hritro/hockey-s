@@ -10,6 +10,9 @@ import profImage from "./assets/images/4.png";
 import Banner from "./components/Banner";
 import ProductCard from "./components/ProductCard";
 import ClientQuestion from "./Components/ClientQuestion";
+import SocialMedia from "./Components/SocialMedia";
+import Footer from "./Components/Footer";
+import GetinTouch from "./Components/GetinTouch";
 
 function App() {
   const products = [
@@ -82,131 +85,131 @@ function App() {
 
   return (
     <>
-      <NavBar></NavBar>
+      <div className="max-w-7xl mx-auto">
+        <NavBar></NavBar>
 
-      <Banner></Banner>
+        <Banner></Banner>
 
-      <Section
-        title={"Professional Hockeys Club"}
-        description={
-          "Elevating Excellence: Join the Professional Hockey Club for a Premier Sporting Experience. Skate into Success: Unleash Your Passion with the Professional Hockey Club."
-        }
-      ></Section>
-
-      <div className="grid lg:grid-cols-4 grid-cols-1 gap-5">
-        <State
-          progress={
-            <CircleProgress
-              strk={"red"}
-              ofst={"73px"}
-              percentage={"87"}
-            ></CircleProgress>
-          }
-          title={"Prayer Facility"}
+        <Section
+          title={"Professional Hockeys Club"}
           description={
-            "Our Prayer Facility offers a tranquil haven for moments of reflection and connection."
+            "Elevating Excellence: Join the Professional Hockey Club for a Premier Sporting Experience. Skate into Success: Unleash Your Passion with the Professional Hockey Club."
           }
-        ></State>
+        ></Section>
 
-        <State
-          progress={
-            <CircleProgress
-              strk={"cyan"}
-              ofst={"60px"}
-              percentage={"95"}
-            ></CircleProgress>
-          }
-          title={"Experienced Coach"}
+        <div className="grid lg:grid-cols-4 grid-cols-1 gap-5">
+          <State
+            progress={
+              <CircleProgress
+                strk={"red"}
+                ofst={"73px"}
+                percentage={"87"}
+              ></CircleProgress>
+            }
+            title={"Prayer Facility"}
+            description={
+              "Our Prayer Facility offers a tranquil haven for moments of reflection and connection."
+            }
+          ></State>
+
+          <State
+            progress={
+              <CircleProgress
+                strk={"cyan"}
+                ofst={"60px"}
+                percentage={"95"}
+              ></CircleProgress>
+            }
+            title={"Experienced Coach"}
+            description={
+              "Our seasoned coaches bring a wealth of experience, dedication, and personalized guidance to every coaching session."
+            }
+          ></State>
+
+          <State
+            progress={
+              <CircleProgress
+                strk={"orange"}
+                ofst={"70px"}
+                percentage={"90"}
+              ></CircleProgress>
+            }
+            title={"Senior Player"}
+            description={
+              "Embark on a Journey of Mastery with Our Senior Players."
+            }
+          ></State>
+
+          <State
+            progress={
+              <CircleProgress
+                strk={"blue"}
+                ofst={"80px"}
+                percentage={"80"}
+              ></CircleProgress>
+            }
+            title={"Training Ground"}
+            description={
+              "Our Training Ground is a sacred arena where dedication meets discipline, and aspirations evolve into achievements."
+            }
+          ></State>
+        </div>
+
+        <Section
+          title={"Program Sections"}
           description={
-            "Our seasoned coaches bring a wealth of experience, dedication, and personalized guidance to every coaching session."
+            "Discover the richness within our organization through its multifaceted Program Sections, each a unique facet of our comprehensive offerings"
           }
-        ></State>
+        ></Section>
 
-        <State
-          progress={
-            <CircleProgress
-              strk={"orange"}
-              ofst={"70px"}
-              percentage={"90"}
-            ></CircleProgress>
-          }
-          title={"Senior Player"}
-          description={
-            "Embark on a Journey of Mastery with Our Senior Players."
-          }
-        ></State>
+        <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 mb-5 mt-10">
+          <ImageBgCard
+            image={juniorImage}
+            title={"Junior Program"}
+            description={
+              "Empowering Tomorrow's Leaders: Unleashing Potential through the Junior Program. Journeying into Excellence with our Junior Program."
+            }
+          ></ImageBgCard>
 
-        <State
-          progress={
-            <CircleProgress
-              strk={"blue"}
-              ofst={"80px"}
-              percentage={"80"}
-            ></CircleProgress>
-          }
-          title={"Training Ground"}
-          description={
-            "Our Training Ground is a sacred arena where dedication meets discipline, and aspirations evolve into achievements."
-          }
-        ></State>
-      </div>
+          <ImageBgCard
+            image={teenAgerImage}
+            title={"Teenager Program"}
+            description={
+              "Navigating Adolescence: Empowering Growth with the Teenager Program. Unleashing Potential through our Teenager Program"
+            }
+          ></ImageBgCard>
+        </div>
 
-      <Section
-        title={"Program Sections"}
-        description={
-          "Discover the richness within our organization through its multifaceted Program Sections, each a unique facet of our comprehensive offerings"
-        }
-      ></Section>
-
-      <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 mb-5 mt-10">
         <ImageBgCard
-          image={juniorImage}
-          title={"Junior Program"}
+          image={profImage}
+          title={"Professional Program"}
           description={
-            "Empowering Tomorrow's Leaders: Unleashing Potential through the Junior Program. Journeying into Excellence with our Junior Program."
+            "Master Your Craft: Elevate Your Skills with the Professional Program. Unleashing Potential through Our Professional Program."
           }
         ></ImageBgCard>
 
-        <ImageBgCard
-          image={teenAgerImage}
-          title={"Teenager Program"}
+        <Section
+          title={"Our New Products"}
           description={
-            "Navigating Adolescence: Empowering Growth with the Teenager Program. Unleashing Potential through our Teenager Program"
+            "Explore the Essence of Our New Products. Introducing the Latest in Our Array of New Products."
           }
-        ></ImageBgCard>
+        ></Section>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-10">
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+
+        <ClientQuestion></ClientQuestion>
+        <Section
+          title={"Get In Touch"}
+          description={"Whether you have inquiries, feedback, or collaboration proposals, we're here to listen and respond promptly."}
+        ></Section>
+        <GetinTouch></GetinTouch>
+        <SocialMedia></SocialMedia>
       </div>
-
-      <ImageBgCard
-        image={profImage}
-        title={"Professional Program"}
-        description={
-          "Master Your Craft: Elevate Your Skills with the Professional Program. Unleashing Potential through Our Professional Program."
-        }
-      ></ImageBgCard>
-
-      <Section
-        title={"Our New Products"}
-        description={
-          "Explore the Essence of Our New Products. Introducing the Latest in Our Array of New Products."
-        }
-      ></Section>
-
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-10">
-      {
-        products.map((product) => <ProductCard key={product.id}  product={product}/>)
-      }
-    </div>
-
-    <ClientQuestion></ClientQuestion>
-
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+      <Footer></Footer>
     </>
   );
 }
